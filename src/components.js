@@ -17,7 +17,7 @@ export function TodoList(props) {
     const input = event.target;
     const text = input.value;
     const isEnterKey = (event.which === 13);
-    const isLongEnough = text.leng > 0
+    const isLongEnough = text.length > 0
 
     if(isEnterKey && isLongEnough) {
       input.value = '';
