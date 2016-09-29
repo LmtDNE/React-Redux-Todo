@@ -1,7 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { TodoList } from './components';
-import { List, Map } from 'immutable'
+import { List, Map } from 'immutable';
+import reducer from './reducer';
+
+const store = createStore(reducer);
 
 
 const dummyTodos = List([
@@ -12,6 +15,6 @@ const dummyTodos = List([
 ]);
 
 render (
-    <TodoList todos = {dummyTodos} />,
+    <TodoList todos = {store.getState()} />,
     document.getElementById('app')
   );
